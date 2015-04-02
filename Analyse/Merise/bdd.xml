@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<work>
+	<about>
+		<version num="0.3.9.6"/>
+		<author>
+			<name>MESSOUCI</name>
+			<email>jmerise@jfreesoft.com</email>
+		</author>
+	</about>
+<MCD>
+	<entitiesList>
+		<entite name="Produits" x="5" y="83">
+			<attribut name ="id_produit" type="Auto_increment" size1="25" size2="0" key="PRIMARY KEY" isnull="true" comment=""/>
+			<attribut name ="type_produit" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="nom_produit" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="prix_produit" type="Float" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="stock" type="Int" size1="25" size2="0" key=" " isnull="true" comment=""/>
+
+		</entite>
+
+		<entite name="Utilisateurs" x="421" y="166">
+			<attribut name ="id_cli" type="Auto_increment" size1="25" size2="0" key="PRIMARY KEY" isnull="true" comment=""/>
+			<attribut name ="nom_cli" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="prenom_cli" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="adresse_cli" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="tel_cli" type="Numeric" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="mdp_cli" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="mail_cli" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="datenaiss" type="Date" size1="25" size2="0" key=" " isnull="true" comment=""/>
+
+		</entite>
+
+		<entite name="Traiteur" x="540" y="349">
+			<attribut name ="id_traiteur" type="Auto_increment" size1="25" size2="0" key="PRIMARY KEY" isnull="true" comment=""/>
+			<attribut name ="nom_traiteur" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+
+		</entite>
+
+		<relation name="commande" x="393" y="356">
+
+		</relation>
+
+		<entite name="Plats" x="145" y="323">
+			<attribut name ="id_plat" type="Auto_increment" size1="25" size2="0" key="PRIMARY KEY" isnull="true" comment=""/>
+			<attribut name ="type_cuisine" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="nb_plat" type="Int" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="chaud" type="Bool" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="type_plat" type="Varchar" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="prix_plat" type="Float" size1="25" size2="0" key=" " isnull="true" comment=""/>
+
+		</entite>
+
+		<relation name="comporte" x="89" y="221">
+
+		</relation>
+
+		<entite name="Panier" x="263" y="12">
+			<attribut name ="id_panier" type="Auto_increment" size1="25" size2="0" key="PRIMARY KEY" isnull="true" comment=""/>
+			<attribut name ="livraison_domicile" type="Bool" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="livraison_heure" type="Date" size1="25" size2="0" key=" " isnull="true" comment=""/>
+
+		</entite>
+
+		<relation name="appartient" x="543" y="47">
+
+		</relation>
+
+		<relation name="contient" x="129" y="24">
+
+		</relation>
+
+		<entite name="Etat" x="691" y="46">
+			<attribut name ="id_etat" type="Auto_increment" size1="25" size2="0" key="PRIMARY KEY" isnull="true" comment=""/>
+			<attribut name ="valid_paye" type="Bool" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="prep" type="Bool" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="livraison" type="Bool" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="retrait" type="Bool" size1="25" size2="0" key=" " isnull="true" comment=""/>
+			<attribut name ="livré" type="Bool" size1="25" size2="0" key=" " isnull="true" comment=""/>
+
+		</entite>
+
+		<entite name="Commandes" x="804" y="289">
+			<attribut name ="id_commande" type="Auto_increment" size1="25" size2="0" key="PRIMARY KEY" isnull="true" comment=""/>
+			<attribut name ="paiement_fait" type="Bool" size1="25" size2="0" key=" " isnull="true" comment=""/>
+
+		</entite>
+
+		<relation name="suit" x="858" y="215">
+
+		</relation>
+
+		<relation name="paie" x="675" y="285">
+
+		</relation>
+
+	</entitiesList>
+	<LinkList>
+		<link name=" " card="0,n" elem1="Traiteur" elem2="commande" casse="false" x="543.0" y="276.0" />
+		<link name="" card="1,n" elem1="Produits" elem2="comporte" casse="false" x="142.0" y="180.0" />
+		<link name="" card="1,n" elem1="Plats" elem2="comporte" casse="false" x="157.0" y="293.0" />
+		<link name=" " card="0,n" elem1="Plats" elem2="commande" casse="false" x="336.0" y="333.0" />
+		<link name="" card="0,1" elem1="Panier" elem2="appartient" casse="false" x="0.0" y="0.0" />
+		<link name="" card="1,1" elem1="Utilisateurs" elem2="appartient" casse="false" x="471.0" y="95.0" />
+		<link name=" " card="0,n" elem1="Produits" elem2="contient" casse="false" x="129.0" y="80.0" />
+		<link name="" card="1,n" elem1="Panier" elem2="contient" casse="false" x="232.0" y="47.0" />
+		<link name="" card="0,n" elem1="Etat" elem2="suit" casse="false" x="0.0" y="0.0" />
+		<link name="" card="1,1" elem1="Commandes" elem2="suit" casse="false" x="897.0" y="270.0" />
+		<link name=" " card="0,n" elem1="Utilisateurs" elem2="paie" casse="false" x="618.0" y="165.0" />
+		<link name="" card="1,1" elem1="Commandes" elem2="paie" casse="false" x="824.0" y="235.0" />
+	</LinkList>
+	<heritageList>
+	</heritageList>
+</MCD>
+</work>

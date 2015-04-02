@@ -1,0 +1,52 @@
+<html><head><title></title></head><body>
+	<div id="liste-wrapper"><label><h3>Produits:</h3></label>
+		<ul>
+			<li><strong>id_produit</strong> :	Auto_increment	PRIMARY KEY</li>
+			<li><strong>type_produit</strong> :	Varchar	 </li>
+			<li><strong>nom_produit</strong> :	Varchar	 </li>
+			<li><strong>prix_produit</strong> :	Float	 </li>
+			<li><strong>stock</strong> :	Int	 </li>
+		</ul>
+	</div>
+	<div id="liste-wrapper"><label><h3>Utilisateurs:</h3></label>
+		<ul>
+			<li><strong>id_cli</strong> :	Auto_increment	PRIMARY KEY</li>
+			<li><strong>nom_cli</strong> :	Varchar	 </li>
+			<li><strong>prenom_cli</strong> :	Varchar	 </li>
+			<li><strong>adresse_cli</strong> :	Varchar	 </li>
+			<li><strong>tel_cli</strong> :	Numeric	 </li>
+			<li><strong>mdp_cli</strong> :	Varchar	 </li>
+			<li><strong>mail_cli</strong> :	Varchar	 </li>
+			<li><strong>datenaiss</strong> :	Date	 </li>
+		</ul>
+	</div>
+	<div id="liste-wrapper"><label><h3>Traiteur:</h3></label>
+		<ul>
+			<li><strong>id_traiteur</strong> :	Auto_increment	PRIMARY KEY</li>
+			<li><strong>nom_traiteur</strong> :	Varchar	 </li>
+		</ul>
+	</div>
+	<div id="liste-wrapper"><label><h3>Plats:</h3></label>
+		<ul>
+			<li><strong>id_plat</strong> :	Auto_increment	PRIMARY KEY</li>
+			<li><strong>type_cuisine</strong> :	Varchar	 </li>
+			<li><strong>nb_plat</strong> :	Int	 </li>
+			<li><strong>chaud</strong> :	Bool	 </li>
+			<li><strong>type_plat</strong> :	Varchar	 </li>
+			<li><strong>prix_plat</strong> :	Float	 </li>
+		</ul>
+	</div>
+	<div id="liste-wrapper"><label><h3>Panier:</h3></label>
+		<ul>
+			<li><strong>id_panier</strong> :	Auto_increment	PRIMARY KEY</li>
+			<li><strong>livraison_domicile</strong> :	Bool	 </li>
+			<li><strong>livraison_heure</strong> :	Date	 </li>
+		</ul>
+	</div>
+	<div id="liste-wrapper"><label><h3>Etat:</h3></label>
+		<ul>
+			<li><strong>id_etat</strong> :	Auto_increment	PRIMARY KEY</li>
+			<li><strong>valid_paye</strong> :	Bool	 </li>
+			<li><strong>prep</strong> :	Bool	 </li>
+			<li><strong>livraison</strong> :	Bool	 </li>
+			<li><strong>retrait</strong> :	Bool	 </li>
