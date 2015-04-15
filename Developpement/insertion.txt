@@ -32,9 +32,12 @@ INSERT INTO Commande VALUES (3,1,0,'2014-12-13 18:18:24',0,3);
 -------------------------------------------
 INSERT INTO Client VALUES (1,'Merion','Julien','3 rue de Merion','0808080808','mdpchiffre1','julien@merion.pro','08/08/1992',3);
 INSERT INTO Client VALUES (2,'Davanture','Henri','1 rue de Davanture','0707070707','mdpchiffre2','henri@davanture.fr','07/07/1994',1);
-INSERT INTO Client VALUES (3,'Segaud','Jean-Baptiste','2 rue de Segaud','0606060606','mdpchiffre3','jb@segaud.com','04/01/1992',3);
+INSERT INTO Client VALUES (3,'Segaud','Jean-Baptiste','2 rue de Segaud','0606060606','mdpchiffre3','jb@segaud.com','04/01/1992',2);
 -------------------------------------------
 INSERT INTO contient VALUES (1,2);
 INSERT INTO contient VALUES (2,3);
 INSERT INTO contient VALUES (3,1);
 -------------------------------------------
+INSERT INTO constitue VALUES (1,2);
+INSERT INTO constitue VALUES (2,3);
+INSERT INTO constitue VALUES (3,1);
