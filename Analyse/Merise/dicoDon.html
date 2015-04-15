@@ -1,14 +1,13 @@
 <html><head><title></title></head><body>
-	<div id="liste-wrapper"><label><h3>Produits:</h3></label>
+	<div id="liste-wrapper"><label><h3>Produit:</h3></label>
 		<ul>
 			<li><strong>id_produit</strong> :	Auto_increment	PRIMARY KEY</li>
 			<li><strong>type_produit</strong> :	Varchar	 </li>
 			<li><strong>nom_produit</strong> :	Varchar	 </li>
 			<li><strong>prix_produit</strong> :	Float	 </li>
-			<li><strong>stock</strong> :	Int	 </li>
 		</ul>
 	</div>
-	<div id="liste-wrapper"><label><h3>Utilisateurs:</h3></label>
+	<div id="liste-wrapper"><label><h3>Client:</h3></label>
 		<ul>
 			<li><strong>id_cli</strong> :	Auto_increment	PRIMARY KEY</li>
 			<li><strong>nom_cli</strong> :	Varchar	 </li>
@@ -26,27 +25,48 @@
 			<li><strong>nom_traiteur</strong> :	Varchar	 </li>
 		</ul>
 	</div>
-	<div id="liste-wrapper"><label><h3>Plats:</h3></label>
+	<div id="liste-wrapper"><label><h3>Plat:</h3></label>
 		<ul>
 			<li><strong>id_plat</strong> :	Auto_increment	PRIMARY KEY</li>
 			<li><strong>type_cuisine</strong> :	Varchar	 </li>
-			<li><strong>nb_plat</strong> :	Int	 </li>
+			<li><strong>nb_pers</strong> :	Int	 </li>
 			<li><strong>chaud</strong> :	Bool	 </li>
 			<li><strong>type_plat</strong> :	Varchar	 </li>
-			<li><strong>prix_plat</strong> :	Float	 </li>
 		</ul>
 	</div>
 	<div id="liste-wrapper"><label><h3>Panier:</h3></label>
 		<ul>
 			<li><strong>id_panier</strong> :	Auto_increment	PRIMARY KEY</li>
-			<li><strong>livraison_domicile</strong> :	Bool	 </li>
-			<li><strong>livraison_heure</strong> :	Date	 </li>
 		</ul>
 	</div>
-	<div id="liste-wrapper"><label><h3>Etat:</h3></label>
+	<div id="liste-wrapper"><label><h3>Commande:</h3></label>
 		<ul>
-			<li><strong>id_etat</strong> :	Auto_increment	PRIMARY KEY</li>
-			<li><strong>valid_paye</strong> :	Bool	 </li>
-			<li><strong>prep</strong> :	Bool	 </li>
-			<li><strong>livraison</strong> :	Bool	 </li>
-			<li><strong>retrait</strong> :	Bool	 </li>
+			<li><strong>id_commande</strong> :	Auto_increment	PRIMARY KEY</li>
+			<li><strong>paiement_fait</strong> :	Bool	 </li>
+			<li><strong>livraison_domicile</strong> :	Bool	 </li>
+			<li><strong>livraison_heure</strong> :	Date	 </li>
+			<li><strong>etat_com</strong> :	Int	 </li>
+		</ul>
+	</div>
+	<div id="liste-wrapper"><label><h3>Menu:</h3></label>
+		<ul>
+			<li><strong>id_menu</strong> :	Int	PRIMARY KEY</li>
+		</ul>
+	</div>
+	<div id="links"><label><h3>Liens:</h3></label>
+		<ul>
+			<li>elem 1 : Traiteur | elem2 : fournit | card : 1,n</li>
+			<li>elem 1 : Plat | elem2 : fournit | card : 1,n</li>
+			<li>elem 1 : Panier | elem2 : appartient | card : 1,1</li>
+			<li>elem 1 : Client | elem2 : appartient | card : 0,1</li>
+			<li>elem 1 : Produit | elem2 : contient | card : 0,n</li>
+			<li>elem 1 : Panier | elem2 : contient | card : 1,n</li>
+			<li>elem 1 : Client | elem2 : paie | card : 0,n</li>
+			<li>elem 1 : Commande | elem2 : paie | card : 1,1</li>
+			<li>elem 1 : Menu | elem2 : avoir | card : 1,n</li>
+			<li>elem 1 : Plat | elem2 : avoir | card : 0,n</li>
+			<li>elem 1 : Produit | elem2 : constitue | card : 0,n</li>
+			<li>elem 1 : Commande | elem2 : constitue | card : 1,n</li>
+		</ul>
+	</div>
+</body></html>
