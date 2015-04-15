@@ -1,0 +1,40 @@
+INSERT INTO Produit VALUES (1,'typeprod1','nomprod1',17);
+INSERT INTO Produit VALUES (2,'typeprod2','nomprod2',25);
+INSERT INTO Produit VALUES (3,'typeprod3','nomprod3',45);
+-------------------------------------------
+INSERT INTO Plat VALUES (1,'type1',2,0,'typeplat1',1);
+INSERT INTO Plat VALUES (2,'type1',1,0,'typeplat2',2);
+INSERT INTO Plat VALUES (3,'type1',3,1,'typeplat3',3);
+-------------------------------------------
+INSERT INTO Menu VALUES (1,1);
+INSERT INTO Menu VALUES (2,2);
+INSERT INTO Menu VALUES (3,3);
+-------------------------------------------
+INSERT INTO avoir VALUES (1,1,3,1);
+INSERT INTO avoir VALUES (2,2,2,3);
+INSERT INTO avoir VALUES (3,3,1,2);
+-------------------------------------------
+INSERT INTO Traiteur VALUES (1,'1ertraiteur');
+INSERT INTO Traiteur VALUES (2,'2emtraiteur');
+INSERT INTO Traiteur VALUES (3,'3emtraiteur');
+-------------------------------------------
+INSERT INTO fournit VALUES (27,1,3,1);
+INSERT INTO fournit VALUES (18,2,2,3);
+INSERT INTO fournit VALUES (225,3,1,2);
+-------------------------------------------
+INSERT INTO Panier VALUES (1,2);
+INSERT INTO Panier VALUES (2,3);
+INSERT INTO Panier VALUES (3,1);
+-------------------------------------------
+INSERT INTO Commande VALUES (1,0,1,'2014-12-12 19:54:24',1,1);
+INSERT INTO Commande VALUES (2,1,1,'2014-12-12 20:08:24',0,2);
+INSERT INTO Commande VALUES (3,1,0,'2014-12-13 18:18:24',0,3);
+-------------------------------------------
+INSERT INTO Client VALUES (1,'Merion','Julien','3 rue de Merion','0808080808','mdpchiffre1','julien@merion.pro','08/08/1992',3);
+INSERT INTO Client VALUES (2,'Davanture','Henri','1 rue de Davanture','0707070707','mdpchiffre2','henri@davanture.fr','07/07/1994',1);
+INSERT INTO Client VALUES (3,'Segaud','Jean-Baptiste','2 rue de Segaud','0606060606','mdpchiffre3','jb@segaud.com','04/01/1992',3);
+-------------------------------------------
+INSERT INTO contient VALUES (1,2);
+INSERT INTO contient VALUES (2,3);
+INSERT INTO contient VALUES (3,1);
+-------------------------------------------
