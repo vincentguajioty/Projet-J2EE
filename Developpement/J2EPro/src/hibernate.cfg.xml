@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">projetEPSIj2ee</property>
+        <property name="hibernate.connection.url">jdbc:mysql://guajioty.fr/j2ee</property>
+        <property name="hibernate.connection.username">Julien</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <mapping class="com.dju.entities.Produit"/>
+        <mapping class="com.dju.entities.Menu"/>
+        <mapping class="com.dju.entities.Plat"/>
+        <mapping class="com.dju.entities.Client"/>
+        <mapping class="com.dju.entities.Commande"/>
+        <mapping class="com.dju.entities.Menu"/>
+        <mapping class="com.dju.entities.Panier"/>
+        <mapping class="com.dju.entities.Traiteur"/>
+    </session-factory>
+</hibernate-configuration>
