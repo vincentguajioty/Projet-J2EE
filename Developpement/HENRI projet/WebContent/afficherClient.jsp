@@ -17,6 +17,8 @@
                 <p>Adresse : <c:out value="${ client.adresse }"/></p>
                 <p>Numéro de téléphone : <c:out value="${ client.telephone }"/></p>
                 <p>Email : <c:out value="${ client.email }"/></p>
+                <p>Date de naissance : <c:out value="${ client.datenaiss }"/></p>
+                <p>Mot de passe : <c:out value="${ client.MDP }"/> <b>Conservez le précieusement !</b> </p>
             </c:if>
         </div>
     </body>

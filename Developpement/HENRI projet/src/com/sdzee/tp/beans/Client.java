@@ -1,5 +1,6 @@
 package com.sdzee.tp.beans;
 
+
 public class Client {
     /* Propriétés du bean */
     private String nom;
@@ -7,6 +8,9 @@ public class Client {
     private String adresse;
     private String telephone;
     private String email;
+    private String mdp;
+    private String mdp2;
+    private String datenaiss;
 
     public void setNom( String nom ) {
         this.nom = nom;
@@ -47,4 +51,26 @@ public class Client {
     public String getEmail() {
         return email;
     }
+    public void setMDP( String mdp ) {
+        this.mdp = mdp;
+    }
+
+    public String getMDP() {
+        return mdp;
+    }
+    public void setDatenaiss( String datenaiss ) {
+        this.datenaiss = datenaiss;
+    }
+
+    public String getDatenaiss() {
+        return datenaiss;
+    }
+    public void setMDP2( String mdp2 ) {
+        this.mdp2 = mdp2;
+    }
+
+    public String getMDP2() {
+        return mdp2;
+    }
+    
 }

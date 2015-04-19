@@ -1,6 +1,7 @@
 package com.sdzee.tp.servlets;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +17,9 @@ public class CreationClient extends HttpServlet {
     public static final String CHAMP_ADRESSE   = "adresseClient";
     public static final String CHAMP_TELEPHONE = "telephoneClient";
     public static final String CHAMP_EMAIL     = "emailClient";
+    public static final String CHAMP_MDP   	   = "mdpClient";
+    public static final String CHAMP_MDP2      = "mdp2Client";
+    public static final String CHAMP_DATENAISS = "datenaissClient";
  
     public static final String ATT_CLIENT      = "client";
     public static final String ATT_MESSAGE     = "message";
@@ -33,6 +37,10 @@ public class CreationClient extends HttpServlet {
         String adresse = request.getParameter( CHAMP_ADRESSE );
         String telephone = request.getParameter( CHAMP_TELEPHONE );
         String email = request.getParameter( CHAMP_EMAIL );
+        String mdp = request.getParameter( CHAMP_MDP );
+        String mdp2 = request.getParameter( CHAMP_MDP2 );
+        String datenaiss = request.getParameter( CHAMP_DATENAISS );
+        
 
         String message;
         boolean erreur;
@@ -41,13 +49,25 @@ public class CreationClient extends HttpServlet {
          * du formulaire n'est pas renseigné, alors on affiche un message
          * d'erreur, sinon on affiche un message de succès
          */
-        if ( nom.trim().isEmpty() || adresse.trim().isEmpty() || telephone.trim().isEmpty() ) {
-            message = "Erreur - Vous n'avez pas rempli tous les champs obligatoires. <br> <a href=\"creerClient.jsp\">Cliquez ici</a> pour accéder au formulaire de création d'un client.";
+        
+
+        if ( nom.trim().isEmpty() || adresse.trim().isEmpty() || telephone.trim().isEmpty() || mdp.trim().isEmpty() ) {
+            message = "Erreur- Vous n'avez pas rempli tous les champs obligatoires. <br> <a href=\"creerClient.jsp\">Cliquez ici</a> pour accéder au formulaire de création d'un client.";
             erreur = true;
-        } else {
+        } 
+        else if (mdp.contentEquals(mdp2))
+        {
             message = "Client créé avec succès !";
             erreur = false;
         }
+        else
+        {
+        	message = "Erreur - vos mots de passes ne sont pas identiques. <br> <a href=\"creerClient.jsp\">Cliquez ici</a> pour accéder au formulaire de création d'un client.";
+        	erreur = true;
+
+        }
+        
+        
         /*
          * Création du bean Client et initialisation avec les données récupérées
          */
@@ -57,6 +77,9 @@ public class CreationClient extends HttpServlet {
         client.setAdresse( adresse );
         client.setTelephone( telephone );
         client.setEmail( email );
+        client.setMDP( mdp );
+        client.setMDP2( mdp2 );
+        client.setDatenaiss( datenaiss );
 
         /* Ajout du bean et du message à l'objet requête */
         request.setAttribute( ATT_CLIENT, client );

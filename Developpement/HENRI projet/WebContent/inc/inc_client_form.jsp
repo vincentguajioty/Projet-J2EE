@@ -18,3 +18,15 @@
 <label for="emailClient">Adresse email</label>
 <input type="email" id="emailClient" name="emailClient" value="" size="30" maxlength="60" />
 <br />
+
+<label for="mdp">Mot de passe <span class="requis">*</span></label>
+<input type="password" id="mdp" name="mdpClient" value="" size="30" maxlength="30" />
+<br />
+
+<label for="mdp2">Répetez mot de passe <span class="requis">*</span></label>
+<input type="password" id="mdp2" name="mdp2Client" value="" size="30" maxlength="30" />
+<br />
+
+<label for="datenaiss">Votre date de naissance</label>
+<input type="text" id="datenaiss" name="datenaissClient" value="jj/mm/aaaa" size="30" maxlength="60" />
+<br />
