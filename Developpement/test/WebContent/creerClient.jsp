@@ -10,9 +10,9 @@
     <body>
         <c:import url="/inc/menu.jsp" />
         <div>
-            <form method="get" action="<c:url value="/creationClient"/>">
+            <form method="post" action="<c:url value="/creationClient"/>">
                 <fieldset>
-                    <legend>Informations client</legend>
+                    <legend>Inscription</legend>
                     <c:import url="/inc/inc_client_form.jsp" />
                 </fieldset>
                 <input type="submit" value="Valider"  />
