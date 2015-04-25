@@ -1,6 +1,6 @@
 package com.dju.entities;
 
-// Generated Apr 17, 2015 5:26:36 PM by Hibernate Tools 4.0.0
+// Generated Apr 24, 2015 5:08:28 PM by Hibernate Tools 4.0.0
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -22,18 +22,18 @@ import javax.persistence.TemporalType;
 @Table(name = "Commande", catalog = "j2ee")
 public class Commande implements java.io.Serializable {
 
-	private Integer idCommande;
+	private int idCommande;
 	private Client client;
-	private Boolean paiementFait;
-	private Boolean livraisonDomicile;
+	private boolean paiementFait;
+	private boolean livraisonDomicile;
 	private Date livraisonHeure;
 	private Integer etatCom;
 
 	public Commande() {
 	}
 
-	public Commande(Client client, Boolean paiementFait,
-			Boolean livraisonDomicile, Date livraisonHeure, Integer etatCom) {
+	public Commande(Client client, boolean paiementFait,
+			boolean livraisonDomicile, Date livraisonHeure, Integer etatCom) {
 		this.client = client;
 		this.paiementFait = paiementFait;
 		this.livraisonDomicile = livraisonDomicile;
@@ -44,11 +44,11 @@ public class Commande implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "id_commande", unique = true, nullable = false)
-	public Integer getIdCommande() {
+	public int getIdCommande() {
 		return this.idCommande;
 	}
 
-	public void setIdCommande(Integer idCommande) {
+	public void setIdCommande(int idCommande) {
 		this.idCommande = idCommande;
 	}
 
@@ -63,20 +63,20 @@ public class Commande implements java.io.Serializable {
 	}
 
 	@Column(name = "paiement_fait")
-	public Boolean getPaiementFait() {
+	public boolean isPaiementFait() {
 		return this.paiementFait;
 	}
 
-	public void setPaiementFait(Boolean paiementFait) {
+	public void setPaiementFait(boolean paiementFait) {
 		this.paiementFait = paiementFait;
 	}
 
 	@Column(name = "livraison_domicile")
-	public Boolean getLivraisonDomicile() {
+	public boolean isLivraisonDomicile() {
 		return this.livraisonDomicile;
 	}
 
-	public void setLivraisonDomicile(Boolean livraisonDomicile) {
+	public void setLivraisonDomicile(boolean livraisonDomicile) {
 		this.livraisonDomicile = livraisonDomicile;
 	}
 

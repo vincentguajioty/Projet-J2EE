@@ -1,4 +1,4 @@
-package hibernate;
+package unused;
 import static org.junit.Assert.*;
 
 import org.hibernate.HibernateException;

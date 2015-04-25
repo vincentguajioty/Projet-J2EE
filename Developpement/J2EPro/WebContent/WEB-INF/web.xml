@@ -23,9 +23,19 @@
 	    -->
 	</servlet>
 
+	<servlet>
+		<servlet-name>PanierServlet</servlet-name>
+		<servlet-class>com.dju.servlets.PanierServlet</servlet-class>
+	</servlet>
+
     <servlet-mapping>
 		<servlet-name>TestServlet</servlet-name>
 		<url-pattern>/lol</url-pattern>
+	</servlet-mapping>
+
+    <servlet-mapping>
+		<servlet-name>PanierServlet</servlet-name>
+		<url-pattern>/panier</url-pattern>
 	</servlet-mapping>
 
 </web-app>

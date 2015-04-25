@@ -1,6 +1,6 @@
 package com.dju.entities;
 
-// Generated Apr 17, 2015 5:26:36 PM by Hibernate Tools 4.0.0
+// Generated Apr 24, 2015 5:08:28 PM by Hibernate Tools 4.0.0
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -59,6 +59,11 @@ public class PlatId implements java.io.Serializable {
 		result = 37 * result + this.getIdPlat();
 		result = 37 * result + this.getIdProduit();
 		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "PlatId [idPlat=" + idPlat + ", idProduit=" + idProduit + "]";
 	}
 
 }

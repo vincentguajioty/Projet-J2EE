@@ -1,6 +1,6 @@
 package com.dju.entities;
 
-// Generated Apr 17, 2015 5:26:36 PM by Hibernate Tools 4.0.0
+// Generated Apr 24, 2015 5:08:28 PM by Hibernate Tools 4.0.0
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -23,7 +23,7 @@ public class Plat implements java.io.Serializable {
 	private Produit produit;
 	private String typeCuisine;
 	private Integer nbPers;
-	private Boolean chaud;
+	private boolean chaud;
 	private String typePlat;
 
 	public Plat() {
@@ -35,7 +35,7 @@ public class Plat implements java.io.Serializable {
 	}
 
 	public Plat(PlatId id, Produit produit, String typeCuisine, Integer nbPers,
-			Boolean chaud, String typePlat) {
+			boolean chaud, String typePlat) {
 		this.id = id;
 		this.produit = produit;
 		this.typeCuisine = typeCuisine;
@@ -85,11 +85,11 @@ public class Plat implements java.io.Serializable {
 	}
 
 	@Column(name = "chaud")
-	public Boolean getChaud() {
+	public boolean isChaud() {
 		return this.chaud;
 	}
 
-	public void setChaud(Boolean chaud) {
+	public void setChaud(boolean chaud) {
 		this.chaud = chaud;
 	}
 
@@ -100,6 +100,12 @@ public class Plat implements java.io.Serializable {
 
 	public void setTypePlat(String typePlat) {
 		this.typePlat = typePlat;
+	}
+
+	@Override
+	public String toString() {
+		return "Plat [id=" + id + ", typeCuisine=" + typeCuisine + ", nbPers="
+				+ nbPers + ", chaud=" + chaud + ", typePlat=" + typePlat + "]";
 	}
 
 }

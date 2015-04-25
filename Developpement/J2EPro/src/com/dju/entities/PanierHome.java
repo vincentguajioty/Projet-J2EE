@@ -1,6 +1,6 @@
 package com.dju.entities;
 
-// Generated Apr 17, 2015 5:26:36 PM by Hibernate Tools 4.0.0
+// Generated Apr 24, 2015 5:08:29 PM by Hibernate Tools 4.0.0
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -55,7 +55,7 @@ public class PanierHome {
 		}
 	}
 
-	public Panier findById(Integer id) {
+	public Panier findById(int id) {
 		log.debug("getting Panier instance with id: " + id);
 		try {
 			Panier instance = entityManager.find(Panier.class, id);

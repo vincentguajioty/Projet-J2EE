@@ -13,12 +13,13 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 
+import unused.HibernateUtil;
+
 import com.dju.entities.Menu;
 import com.dju.entities.Plat;
 import com.dju.entities.Produit;
 import com.dju.entities.ProduitHome;
 
-import hibernate.HibernateUtil;
 import hibernate.JPASessionUtil;
 
 import java.util.HashSet;

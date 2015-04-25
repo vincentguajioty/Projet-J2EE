@@ -1,6 +1,6 @@
 package com.dju.entities;
 
-// Generated Apr 17, 2015 5:26:36 PM by Hibernate Tools 4.0.0
+// Generated Apr 24, 2015 5:08:28 PM by Hibernate Tools 4.0.0
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Table(name = "Traiteur", catalog = "j2ee")
 public class Traiteur implements java.io.Serializable {
 
-	private Integer idTraiteur;
+	private int idTraiteur;
 	private String nomTraiteur;
 
 	public Traiteur() {
@@ -29,11 +29,11 @@ public class Traiteur implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "id_traiteur", unique = true, nullable = false)
-	public Integer getIdTraiteur() {
+	public int getIdTraiteur() {
 		return this.idTraiteur;
 	}
 
-	public void setIdTraiteur(Integer idTraiteur) {
+	public void setIdTraiteur(int idTraiteur) {
 		this.idTraiteur = idTraiteur;
 	}
 
