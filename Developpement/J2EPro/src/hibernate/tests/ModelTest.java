@@ -1,22 +1,35 @@
-package test.java.hibernate;
+package hibernate.tests;
 
 import java.util.Set;
 
 
-import com.dju.entities.Menu;
-import com.dju.entities.MenuHome;
-import com.dju.entities.MenuId;
-import com.dju.entities.Plat;
-import com.dju.entities.PlatHome;
-import com.dju.entities.PlatId;
-import com.dju.entities.Produit;
-import com.dju.entities.ProduitHome;
+
+
+
 
 //import static org.junit.Assert.*;
 
+
+
+
+
+
+import entities.Client;
+import entities.Menu;
+import entities.MenuHome;
+import entities.MenuId;
+import entities.Panier;
+import entities.PanierHome;
+import entities.Plat;
+import entities.PlatHome;
+import entities.PlatId;
+import entities.Produit;
+import entities.ProduitHome;
+import entities.homes.ProxyHome;
+
 import org.junit.Test;
 
-public class ProduitTest
+public class ModelTest
 {
 	@Test
 	public void testGetMenu()
@@ -53,11 +66,11 @@ public class ProduitTest
 		
 		System.out.println("testGetPlat : {\n\t" + pl.toString() + "\n\t" + p.toString() + "\n}");
 	}
-	
+
 	@Test
 	public void testGetProduit()
 	{
-		Produit p = (new ProduitHome()).findById(1);
+		Produit p = (new ProxyHome<Produit>(new ProduitHome())).findById(1);
 		Set<Menu> prod_menus = null;
 		
 		if(p == null)
@@ -75,5 +88,36 @@ public class ProduitTest
 		{
 			System.out.println("\t\t" + m.toString());
 		}
+	}
+
+	
+	@Test
+	public void testGetPanier()
+	{
+		Panier p = (new ProxyHome<Panier>(new PanierHome())).findById(1);
+		Client c = null;
+
+		if(p == null)
+			throw new NullPointerException("aucun panier");
+		else
+		{
+			c = p.getClient();
+			if(c == null)
+				throw new NullPointerException("aucun client ds panier :/");
+		}
+			
+
+		System.out.println("testGetPanier : {\n\t" + p.toString() + 
+							"\n\t" + c.toString());
+
+		if(p.getProduits() != null && p.getProduits().size() != 0)
+		{
+			Set<Produit> prodz = p.getProduits(); 
+			
+			for (Produit prod : prodz)
+				System.out.println("\t" + prod.toString());
+		}
+		
+		System.out.println("\n}");
 	}
 }

@@ -1,6 +1,6 @@
-package com.dju.entities;
+package entities;
 
-// Generated Apr 24, 2015 5:08:28 PM by Hibernate Tools 4.0.0
+// Generated Apr 26, 2015 9:45:15 PM by Hibernate Tools 4.0.0
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

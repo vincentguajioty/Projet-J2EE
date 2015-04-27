@@ -1,6 +1,6 @@
-package com.dju.entities;
+package entities;
 
-// Generated Apr 24, 2015 5:08:29 PM by Hibernate Tools 4.0.0
+// Generated Apr 26, 2015 9:45:15 PM by Hibernate Tools 4.0.0
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,20 +9,20 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * Home object for domain model class Panier.
- * @see com.dju.entities.Panier
+ * Home object for domain model class Traiteur.
+ * @see entities.Traiteur
  * @author Hibernate Tools
  */
 @Stateless
-public class PanierHome {
+public class TraiteurHome {
 
-	private static final Log log = LogFactory.getLog(PanierHome.class);
+	private static final Log log = LogFactory.getLog(TraiteurHome.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public void persist(Panier transientInstance) {
-		log.debug("persisting Panier instance");
+	public void persist(Traiteur transientInstance) {
+		log.debug("persisting Traiteur instance");
 		try {
 			entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -32,8 +32,8 @@ public class PanierHome {
 		}
 	}
 
-	public void remove(Panier persistentInstance) {
-		log.debug("removing Panier instance");
+	public void remove(Traiteur persistentInstance) {
+		log.debug("removing Traiteur instance");
 		try {
 			entityManager.remove(persistentInstance);
 			log.debug("remove successful");
@@ -43,10 +43,10 @@ public class PanierHome {
 		}
 	}
 
-	public Panier merge(Panier detachedInstance) {
-		log.debug("merging Panier instance");
+	public Traiteur merge(Traiteur detachedInstance) {
+		log.debug("merging Traiteur instance");
 		try {
-			Panier result = entityManager.merge(detachedInstance);
+			Traiteur result = entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -55,10 +55,10 @@ public class PanierHome {
 		}
 	}
 
-	public Panier findById(int id) {
-		log.debug("getting Panier instance with id: " + id);
+	public Traiteur findById(int id) {
+		log.debug("getting Traiteur instance with id: " + id);
 		try {
-			Panier instance = entityManager.find(Panier.class, id);
+			Traiteur instance = entityManager.find(Traiteur.class, id);
 			log.debug("get successful");
 			return instance;
 		} catch (RuntimeException re) {

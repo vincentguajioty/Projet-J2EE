@@ -1,28 +1,28 @@
-package com.dju.entities;
+package entities;
 
-// Generated Apr 24, 2015 5:08:29 PM by Hibernate Tools 4.0.0
+// Generated Apr 26, 2015 9:45:15 PM by Hibernate Tools 4.0.0
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import entities.homes.AHome;
+
 /**
- * Home object for domain model class Client.
- * @see com.dju.entities.Client
+ * Home object for domain model class Panier.
+ * @see entities.Panier
  * @author Hibernate Tools
  */
 @Stateless
-public class ClientHome {
+public class PanierHome extends AHome<Panier>
+{
+	private static final Log log = LogFactory.getLog(PanierHome.class);
 
-	private static final Log log = LogFactory.getLog(ClientHome.class);
-
-	@PersistenceContext
-	private EntityManager entityManager;
-
-	public void persist(Client transientInstance) {
-		log.debug("persisting Client instance");
+	public void persist(Panier transientInstance) {
+		log.debug("persisting Panier instance");
 		try {
 			entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -32,8 +32,8 @@ public class ClientHome {
 		}
 	}
 
-	public void remove(Client persistentInstance) {
-		log.debug("removing Client instance");
+	public void remove(Panier persistentInstance) {
+		log.debug("removing Panier instance");
 		try {
 			entityManager.remove(persistentInstance);
 			log.debug("remove successful");
@@ -43,10 +43,10 @@ public class ClientHome {
 		}
 	}
 
-	public Client merge(Client detachedInstance) {
-		log.debug("merging Client instance");
+	public Panier merge(Panier detachedInstance) {
+		log.debug("merging Panier instance");
 		try {
-			Client result = entityManager.merge(detachedInstance);
+			Panier result = entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -55,10 +55,10 @@ public class ClientHome {
 		}
 	}
 
-	public Client findById(int id) {
-		log.debug("getting Client instance with id: " + id);
+	public Panier findById(int id) {
+		log.debug("getting Panier instance with id: " + id);
 		try {
-			Client instance = entityManager.find(Client.class, id);
+			Panier instance = entityManager.find(Panier.class, id);
 			log.debug("get successful");
 			return instance;
 		} catch (RuntimeException re) {

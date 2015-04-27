@@ -1,4 +1,4 @@
-package com.dju.entities;
+package entities;
 
 // Generated Apr 24, 2015 5:08:29 PM by Hibernate Tools 4.0.0
 
@@ -12,22 +12,24 @@ import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import unused.HibernateUtil;
+
 /**
- * Home object for domain model class Plat.
- * @see com.dju.entities.Plat
+ * Home object for domain model class Produit.
+ * @see entities.Produit
  * @author Hibernate Tools
  */
 @Stateless
-public class PlatHome {
+public class ProduitHome_bk {
 
-	private static final Log log = LogFactory.getLog(PlatHome.class);
+	private static final Log log = LogFactory.getLog(ProduitHome_bk.class);
 
 	@PersistenceContext
 	private EntityManager entityManager = JPASessionUtil.getEntityManager("pu_j2ee");
 	private EntityTransaction tx = null;
 
-	public void persist(Plat transientInstance) {
-		log.debug("persisting Plat instance");
+	public void persist(Produit transientInstance) {
+		log.debug("persisting Produit instance");
 		try {
 			tx = entityManager.getTransaction();
 		    tx.begin();
@@ -42,8 +44,8 @@ public class PlatHome {
 		}
 	}
 
-	public void remove(Plat persistentInstance) {
-		log.debug("removing Plat instance");
+	public void remove(Produit persistentInstance) {
+		log.debug("removing Produit instance");
 		try {
 			tx = entityManager.getTransaction();
 		    tx.begin();
@@ -58,13 +60,13 @@ public class PlatHome {
 		}
 	}
 
-	public Plat merge(Plat detachedInstance) {
-		log.debug("merging Plat instance");
+	public Produit merge(Produit detachedInstance) {
+		log.debug("merging Produit instance");
 		try {
 			tx = entityManager.getTransaction();
 		    tx.begin();
 		    
-			Plat result = entityManager.merge(detachedInstance);
+			Produit result = entityManager.merge(detachedInstance);
 
 			tx.commit();
 			log.debug("merge successful");
@@ -75,13 +77,13 @@ public class PlatHome {
 		}
 	}
 
-	public Plat findById(PlatId id) {
-		log.debug("getting Plat instance with id: " + id.getIdPlat());
+	public Produit findById(int id) {
+		log.debug("getting Produit instance with id: " + id);
 		try {
 			tx = entityManager.getTransaction();
 		    tx.begin();
 		    
-			Plat instance = entityManager.find(Plat.class, id);
+			Produit instance = entityManager.find(Produit.class, id);
 
 			tx.commit();
 			log.debug("get successful");

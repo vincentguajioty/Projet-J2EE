@@ -1,6 +1,6 @@
-package com.dju.entities;
+package entities;
 
-// Generated Apr 24, 2015 5:08:28 PM by Hibernate Tools 4.0.0
+// Generated Apr 26, 2015 9:45:15 PM by Hibernate Tools 4.0.0
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -104,8 +104,9 @@ public class Plat implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "Plat [id=" + id + ", typeCuisine=" + typeCuisine + ", nbPers="
-				+ nbPers + ", chaud=" + chaud + ", typePlat=" + typePlat + "]";
+		return "Plat [id=" + id + ", produit=" + produit + ", typeCuisine="
+				+ typeCuisine + ", nbPers=" + nbPers + ", chaud=" + chaud
+				+ ", typePlat=" + typePlat + "]";
 	}
 
 }

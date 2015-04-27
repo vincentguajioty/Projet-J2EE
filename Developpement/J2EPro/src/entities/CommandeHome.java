@@ -1,6 +1,6 @@
-package com.dju.entities;
+package entities;
 
-// Generated Apr 24, 2015 5:08:29 PM by Hibernate Tools 4.0.0
+// Generated Apr 26, 2015 9:45:15 PM by Hibernate Tools 4.0.0
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -10,7 +10,7 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * Home object for domain model class Commande.
- * @see com.dju.entities.Commande
+ * @see entities.Commande
  * @author Hibernate Tools
  */
 @Stateless

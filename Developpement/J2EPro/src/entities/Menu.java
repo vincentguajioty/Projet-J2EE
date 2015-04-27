@@ -1,6 +1,6 @@
-package com.dju.entities;
+package entities;
 
-// Generated Apr 24, 2015 5:08:28 PM by Hibernate Tools 4.0.0
+// Generated Apr 26, 2015 9:45:15 PM by Hibernate Tools 4.0.0
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 /**
@@ -18,8 +17,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Menu", catalog = "j2ee")
-// @PrimaryKeyJoinColumn(name = "idProduit")
-public class Menu implements java.io.Serializable { //extends Produit {
+public class Menu implements java.io.Serializable {
+
+	@Override
+	public String toString() {
+		return "Menu [id=" + id + ", produit=" + produit + "]";
+	}
 
 	private MenuId id;
 	private Produit produit;
@@ -52,11 +55,6 @@ public class Menu implements java.io.Serializable { //extends Produit {
 
 	public void setProduit(Produit produit) {
 		this.produit = produit;
-	}
-
-	@Override
-	public String toString() {
-		return "Menu [id=" + id + "]";
 	}
 
 }

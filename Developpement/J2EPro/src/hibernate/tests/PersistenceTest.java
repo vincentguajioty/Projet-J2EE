@@ -1,4 +1,4 @@
-package test.java.hibernate;
+package hibernate.tests;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,12 +14,10 @@ import org.junit.Before;
 import org.junit.After;
 
 import unused.HibernateUtil;
-
-import com.dju.entities.Menu;
-import com.dju.entities.Plat;
-import com.dju.entities.Produit;
-import com.dju.entities.ProduitHome;
-
+import entities.Menu;
+import entities.Plat;
+import entities.Produit;
+import entities.ProduitHome;
 import hibernate.JPASessionUtil;
 
 import java.util.HashSet;
@@ -29,6 +27,7 @@ import javax.persistence.EntityManager;
 
 public class PersistenceTest
 {
+	/*
 	@Test
 	public void saveProduit()
 	{
@@ -41,5 +40,6 @@ public class PersistenceTest
 	public void findById()
 	{
 		Produit produit = (new ProduitHome()).findById(0);
-	}	
+	}
+	*/	
 }

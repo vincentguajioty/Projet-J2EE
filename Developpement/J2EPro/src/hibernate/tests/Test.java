@@ -1,4 +1,4 @@
-package test.java.hibernate;
+package hibernate.tests;
 
 import java.util.*;
 
@@ -11,9 +11,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.dju.entities.Menu;
-import com.dju.entities.Plat;
-import com.dju.entities.Produit;
+import entities.Menu;
+import entities.Plat;
+import entities.Produit;
 
 public class Test
 {

@@ -1,4 +1,4 @@
-package com.dju.entities;
+package entities;
 
 // Generated Apr 17, 2015 5:26:36 PM by Hibernate Tools 4.0.0
 
@@ -14,7 +14,7 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * Home object for domain model class Client.
- * @see com.dju.entities.Client
+ * @see entities.Client
  * @author Hibernate Tools
  */
 @Stateless
