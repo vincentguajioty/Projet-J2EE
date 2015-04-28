@@ -33,7 +33,7 @@ public class Client implements java.io.Serializable {
 	private String nomCli;
 	private String prenomCli;
 	private String adresseCli;
-	private Long telCli;
+	private String telCli;
 	private String mdpCli;
 	private String mailCli;
 	private Date datenaiss;
@@ -44,7 +44,7 @@ public class Client implements java.io.Serializable {
 	}
 
 	public Client(Panier panier, String nomCli, String prenomCli,
-			String adresseCli, Long telCli, String mdpCli, String mailCli,
+			String adresseCli, String telCli, String mdpCli, String mailCli,
 			Date datenaiss, Set<Panier> paniers, Set<Commande> commandes) {
 		this.panier = panier;
 		this.nomCli = nomCli;
@@ -107,11 +107,11 @@ public class Client implements java.io.Serializable {
 	}
 
 	@Column(name = "tel_cli", precision = 10, scale = 0)
-	public Long getTelCli() {
+	public String getTelCli() {
 		return this.telCli;
 	}
 
-	public void setTelCli(Long telCli) {
+	public void setTelCli(String telCli) {
 		this.telCli = telCli;
 	}
 

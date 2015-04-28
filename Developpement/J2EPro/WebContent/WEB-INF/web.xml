@@ -37,5 +37,21 @@
 		<servlet-name>PanierServlet</servlet-name>
 		<url-pattern>/panier</url-pattern>
 	</servlet-mapping>
-
+	<servlet>
+		<servlet-name>CreationClient</servlet-name>
+		<servlet-class>servlets.CreationClient</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CreationCommande</servlet-name>
+		<servlet-class>servlets.CreationCommande</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CreationClient</servlet-name>
+		<url-pattern>/creationClient</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreationCommande</servlet-name>
+		<url-pattern>/creationCommande</url-pattern>
+	</servlet-mapping>
 </web-app>
