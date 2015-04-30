@@ -15,7 +15,7 @@
 <input type="text" id="telephoneClient" name="telephoneClient" value="" size="30" maxlength="30" />
 <br />
 
-<label for="emailClient">Adresse email</label>
+<label for="emailClient">Adresse email<span class="requis">*</span></label>
 <input type="email" id="emailClient" name="emailClient" value="" size="30" maxlength="60" />
 <br />
 
@@ -28,5 +28,5 @@
 <br />
 
 <label for="datenaiss">Votre date de naissance</label>
-<input type="text" id="datenaiss" name="datenaissClient" value="jj/mm/aaaa" size="30" maxlength="60" />
+<input type="text" id="datenaiss" name="datenaissClient" value="" size="30" maxlength="60" />
 <br />

@@ -5,8 +5,11 @@ package entities;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import entities.homes.AHome;
 
 /**
  * Home object for domain model class Client.
@@ -14,12 +17,9 @@ import org.apache.commons.logging.LogFactory;
  * @author Hibernate Tools
  */
 @Stateless
-public class ClientHome {
+public class ClientHome extends AHome<Client>{
 
 	private static final Log log = LogFactory.getLog(ClientHome.class);
-
-	@PersistenceContext
-	private EntityManager entityManager;
 
 	public void persist(Client transientInstance) {
 		log.debug("persisting Client instance");
@@ -65,5 +65,9 @@ public class ClientHome {
 			log.error("get failed", re);
 			throw re;
 		}
+	}
+	public ClientHome()
+	{
+		System.out.println("création d'un clienthome");
 	}
 }

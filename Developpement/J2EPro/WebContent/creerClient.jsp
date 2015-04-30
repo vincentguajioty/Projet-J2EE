@@ -10,7 +10,7 @@
     <body>
         <c:import url="/inc/menu.jsp" />
         <div>
-            <form method="post" action="<c:url value="/creationClient"/>">
+            <form method="post" action="<c:url value="/creerClient"/>">
                 <fieldset>
                     <legend>Inscription</legend>
                     <c:import url="/inc/inc_client_form.jsp" />

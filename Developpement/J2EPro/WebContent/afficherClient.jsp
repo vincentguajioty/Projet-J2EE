@@ -12,13 +12,13 @@
         <div id="corps">
             <p class="info">${ message }</p>
             <c:if test="${ !erreur }">
-                <p>Nom : <c:out value="${ client.nom }"/></p>
-                <p>Prénom : <c:out value="${ client.prenom }"/></p>
-                <p>Adresse : <c:out value="${ client.adresse }"/></p>
-                <p>Numéro de téléphone : <c:out value="${ client.telephone }"/></p>
-                <p>Email : <c:out value="${ client.email }"/></p>
+                <p>Nom : <c:out value="${ client.nomCli }"/></p>
+                <p>Prénom : <c:out value="${ client.prenomCli }"/></p>
+                <p>Adresse : <c:out value="${ client.adresseCli }"/></p>
+                <p>Numéro de téléphone : <c:out value="${ client.telCli }"/></p>
+                <p>Email : <c:out value="${ client.mailCli }"/></p>
                 <p>Date de naissance : <c:out value="${ client.datenaiss }"/></p>
-                <p>Mot de passe : <c:out value="${ client.MDP }"/> <b>Conservez le précieusement !</b> </p>
+                <p>Mot de passe : <c:out value="${ client.mdpCli }"/> <b>Conservez le précieusement !</b> </p>
             </c:if>
         </div>
     </body>

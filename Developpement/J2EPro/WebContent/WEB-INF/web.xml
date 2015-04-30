@@ -8,6 +8,7 @@
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>test.html</welcome-file>
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>TestServlet</servlet-name>					<!-- better if -->
@@ -41,17 +42,16 @@
 		<servlet-name>CreationClient</servlet-name>
 		<servlet-class>servlets.CreationClient</servlet-class>
 	</servlet>
-	<servlet>
-		<servlet-name>CreationCommande</servlet-name>
-		<servlet-class>servlets.CreationCommande</servlet-class>
-	</servlet>
-	
 	<servlet-mapping>
 		<servlet-name>CreationClient</servlet-name>
-		<url-pattern>/creationClient</url-pattern>
+		<url-pattern>/creerClient</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>Connexion</servlet-name>
+		<servlet-class>servlets.Connexion</servlet-class>
+	</servlet>
 	<servlet-mapping>
-		<servlet-name>CreationCommande</servlet-name>
-		<url-pattern>/creationCommande</url-pattern>
+		<servlet-name>Connexion</servlet-name>
+		<url-pattern>/connexion</url-pattern>
 	</servlet-mapping>
 </web-app>
