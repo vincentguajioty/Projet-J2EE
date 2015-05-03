@@ -15,7 +15,7 @@
                     <legend>Inscription</legend>
                     <c:import url="/inc/inc_client_form.jsp" />
                 </fieldset>
-                <input type="submit" value="Valider"  />
+                <button type="submit" value="S'inscrire" class="btn btn-default">S'inscrire</button>
                 <input type="reset" value="Remettre à zéro" /> <br />
             </form>
         </div>

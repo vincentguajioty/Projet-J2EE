@@ -66,6 +66,19 @@ public class ClientHome extends AHome<Client>{
 			throw re;
 		}
 	}
+	//what
+	public Client findByemail(int email) {
+		log.debug("getting Client instance with mail: " + email);
+		try {
+			Client instance = entityManager.find(Client.class, email);
+			log.debug("get successful");
+			return instance;
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
+		}
+	}
+	//what
 	public ClientHome()
 	{
 		System.out.println("création d'un clienthome");

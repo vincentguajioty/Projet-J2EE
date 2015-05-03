@@ -46,12 +46,20 @@
 		<servlet-name>CreationClient</servlet-name>
 		<url-pattern>/creerClient</url-pattern>
 	</servlet-mapping>
-		<servlet>
+	<servlet>
 		<servlet-name>Connexion</servlet-name>
 		<servlet-class>servlets.Connexion</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Connexion</servlet-name>
 		<url-pattern>/connexion</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>index</servlet-name>
+		<servlet-class>servlets.index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>index</servlet-name>
+		<url-pattern>/accueil</url-pattern>
 	</servlet-mapping>
 </web-app>
