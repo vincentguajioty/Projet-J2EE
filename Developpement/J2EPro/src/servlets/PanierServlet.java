@@ -77,6 +77,6 @@ public class PanierServlet extends HttpServlet
 		request.setAttribute( "plats", plaz );
 		
 		//Set<Menu> m = p.get
-		this.getServletContext().getRequestDispatcher( "/WEB-INF/mon_panier.jsp" ).forward( request, response );
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/monPanier.jsp" ).forward( request, response );
 	}
 }

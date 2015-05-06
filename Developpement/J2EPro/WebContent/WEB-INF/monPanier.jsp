@@ -8,7 +8,12 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Mon Panier</title>
-		<style type="text/css">
+		<style type="text/css">		
+			.item_wrapper a
+			{
+				margin: 5px 10px;
+			}
+				
 			.msg
 			{
 				background-color: red;
@@ -54,20 +59,14 @@
 		        		out.println("<span>Aucun menu.</span>");
 		        	else
 			        	for (Menu men : menus)
-							out.println("<li><div class=\"item_wrapper\"><p>" + men.toString() + 
-							" </p><button id=\"bdetails\" type=\"button\">Details</button> <button id=\"bretirer\" type=\"button\">Retirer</button> " + 
+			        	{
+			        		String url = application.getContextPath();
+							out.println("<li><div class=\"item_wrapper\"><p>" + men.toString() +
+							" </p><a href=\"" + url + "/panier\">Détails</a>" +
+							"<a href=\"" + url + "/panier\">Retirer</a>   " +
 							"</div></li>");
+			        	}
 		        	%>
-		        	<!--
-		        	<li><div class="item_wrapper">
-		        		<p> lolllokio <p>
-		        		<button id="bdetails" type="button">Details</button> <button id="bretirer" type="button">Retirer</button>
-		        	</div> </li>
-		        	<li><div class="item_wrapper">
-		        		<p> vdbdwbfsn <p>
-		        		<button id="bdetails" type="button">Details</button> <button id="bretirer" type="button">Retirer</button>
-		        	</div></li>
-		        	 -->
 	        	</ul>
         	</div>
         	<div>
@@ -80,9 +79,13 @@
 		        		out.println("<span>Aucun plat.</span>");
 		        	else
 			        	for (Plat men : plats)
+			        	{
+			        		String url = application.getContextPath();
 							out.println("<li><div class=\"item_wrapper\"><p>" + men.toString() + 
-									" </p><button id=\"bdetails\" type=\"button\">Details</button> <button id=\"bretirer\" type=\"button\">Retirer</button> " + 
+									" </p><a href=\"" + url + "/panier\">Détails</a>" + 
+									"<a href=\"" + url + "/panier\">Retirer</a>   " + 
 									"</div></li>");
+						}
 		        	%>
 		        	
 		        	<!--
