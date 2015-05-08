@@ -52,7 +52,8 @@ public class Recupmdp extends HttpServlet{
 	        	mdp = c.getMdpCli();
 	        	if (email.contentEquals(mailcli))
 	        	{
-	    		    String emailFrom = "\"moi Himself\"<contact@davanturee.fr>";
+	        		
+	    		    String emailFrom = "\"moi Himself\"<contact@davanture.fr>";
 	    		    String emailTo = email;		
 	    		    String messageText = "Voici votre mot de passe, veuillez en prendre soin. " + " " + mdp;
 	    		    String subject = "Noreply, récupération du mot de passe";
@@ -80,6 +81,7 @@ public class Recupmdp extends HttpServlet{
 	    		    catch (MessagingException e) {
 	    		    	e.printStackTrace();
 	    		    }
+	    		    message2 = "Mail envoyé avec succès";
 	        		
 	        	}
 	        	else
