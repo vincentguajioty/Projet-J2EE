@@ -17,13 +17,13 @@
         <div id="corps">
             <p class="info">${ message }</p>
             <c:if test="${ !erreur }">
-                <p>Nom : <c:out value="${ client.nomCli }"/></p>
-                <p>Prénom : <c:out value="${ client.prenomCli }"/></p>
-                <p>Adresse : <c:out value="${ client.adresseCli }"/></p>
-                <p>Numéro de téléphone : <c:out value="${ client.telCli }"/></p>
-                <p>Email : <c:out value="${ client.mailCli }"/></p>
-                <p>Date de naissance : <c:out value="${ client.datenaiss }"/></p>
-                <p>Mot de passe : <c:out value="${ client.mdpCli }"/> <b>Conservez le précieusement !</b> </p>
+                <p>Nom : <c:out value="${sessionScope.sessionClient.nomCli }"/></p>
+                <p>Prénom : <c:out value="${ sessionScope.sessionClient.prenomCli }"/></p>
+                <p>Adresse : <c:out value="${ sessionScope.sessionClient.adresseCli }"/></p>
+                <p>Numéro de téléphone : <c:out value="${ sessionScope.sessionClient.telCli }"/></p>
+                <p>Email : <c:out value="${ sessionScope.sessionClient.mailCli }"/></p>
+                <p>Date de naissance : <c:out value="${ sessionScope.sessionClient.datenaiss }"/></p>
+                <p>Mot de passe : <a href="recupmdp"><i class="fa fa-envelope"></i>  Renvoyez son mot de passe par mail</a> </p>
             </c:if>
         </div>
 				</div>

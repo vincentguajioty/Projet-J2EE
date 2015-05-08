@@ -48,7 +48,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>Connexion</servlet-name>
-		<servlet-class>servlets.Connexion</servlet-class>
+		<servlet-class>servlets.Conn</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Connexion</servlet-name>
@@ -62,4 +62,29 @@
 		<servlet-name>index</servlet-name>
 		<url-pattern>/accueil</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>Deconnexion</servlet-name>
+		<servlet-class>servlets.Deco</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Deconnexion</servlet-name>
+		<url-pattern>/deconnexion</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Moncompte</servlet-name>
+		<servlet-class>servlets.Moncompte</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Moncompte</servlet-name>
+		<url-pattern>/Mon-compte</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Recupmdp</servlet-name>
+		<servlet-class>servlets.Recupmdp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Recupmdp</servlet-name>
+		<url-pattern>/recupmdp</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

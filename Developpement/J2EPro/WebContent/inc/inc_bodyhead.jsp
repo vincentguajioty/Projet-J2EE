@@ -1,13 +1,5 @@
-<!DOCTYPE html>
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>Votre commande | La pâte de canard</title>
 <link href="inc/bootstrap.min.css" rel="stylesheet">
 <link href="inc/font-awesome.min.css" rel="stylesheet">
 <link href="inc/prettyPhoto.css" rel="stylesheet">
@@ -57,17 +49,19 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.jsp"><img src="inc/images/home/logo.png"
+							<a href="/J2EPro/accueil"><img src="inc/images/home/logo.png"
 								alt="" /></a>
 						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Mon compte</a></li>
+								<c:if test="${!empty sessionScope.sessionClient}">
+									<li><a href="Mon-compte"><i class="fa fa-user"></i> Mon compte</a></li>
+								</c:if>
 								<li><a href="creerClient"><i class="fa fa-crosshairs"></i>S'inscrire</a></li>
 								<li><a href="panier"><i class="fa fa-shopping-cart"></i>Panier</a></li>
-								<li><a href="connexion"><i class="fa fa-lock"></i>Se connecter</a></li>
+								<c:import url="/inc/inc_connecte.jsp" />
 							</ul>
 						</div>
 					</div>
@@ -91,7 +85,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.jsp">Accueil</a></li>
+								<li><a href="/J2EPro/accueil">Accueil</a></li>
 								<li class="dropdown"><a href="#">Shop<i
 										class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
@@ -123,55 +117,3 @@
 		<!--/header-bottom-->
 	</header>
 	<!--/header-->
-
-	<section id="form">
-		<!--form-->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4 col-sm-offset-1">
-					<c:import url="/inc/menu.jsp" />
-        <div id="corps">
-            <p class="info">${ message }</p>
-            <c:if test="${ !erreur }">
-                <p>Informations client.</p>
-                <p>Nom : <c:out value="${ commande.client.nom }"/></p>
-                <p>Prénom : <c:out value="${ commande.client.prenom }"/></p>
-                <p>Adresse : <c:out value="${ commande.client.adresse }"/></p>
-                <p>Numéro de téléphone : <c:out value="${ commande.client.telephone }"/></p>
-                <p>Email : <c:out value="${ commande.client.email }"/></p>
-                <p>Informations commande.</p>
-                <p>Date  : <c:out value="${ commande.date }"/></p> 
-                <p>Montant  : <c:out value="${ commande.montant }"/></p> 
-                <p>Mode de paiement  : <c:out value="${ commande.modePaiement }"/></p> 
-                <p>Statut du paiement  : <c:out value="${ commande.statutPaiement }"/></p> 
-                <p>Mode de livraison  : <c:out value="${ commande.modeLivraison }"/></p> 
-                <p>Statut de la livraison  : <c:out value="${ commande.statutLivraison }"/></p> 
-            </c:if>
-        </div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--/form-->
-
-
-	<footer id="footer">
-		<!--Footer-->
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row">
-					<p class="pull-left">Copyright © 2015 La Pâte de Canard. Tous droits réservés.</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!--/Footer-->
-
-	<script src="inc/js/jquery.js"></script>
-	<script src="inc/js/price-range.js"></script>
-	<script src="inc/js/jquery.scrollUp.min.js"></script>
-	<script src="inc/js/bootstrap.min.js"></script>
-	<script src="inc/js/jquery.prettyPhoto.js"></script>
-	<script src="inc/js/main.js"></script>
-</body>
-</html>

@@ -15,6 +15,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import entities.Client;
 import entities.ClientHome;
@@ -26,13 +27,15 @@ import entities.Produit;
 import entities.homes.ProxyHome;
 
 
-public class Connexion extends HttpServlet {
+public class Conn extends HttpServlet {
+	/* ces constantes répresentent le nom des champs du formulaire connection et autres*/
 	public static final String CHAMP_EMAIL      = "emailClient";
     public static final String CHAMP_MDP    = "motdepasse";
     
-    public static final String ATT_CLIENT      = "client";
-    public static final String ATT_MESSAGE     = "message";
-    public static final String ATT_ERREUR      = "erreur";
+    public static final String ATT_CLIENT      = "c"; //interaction avec le c.qqchosee dans la vue ( JSTL ) 
+    public static final String ATT_SESSION_CLIENT      = "sessionClient"; //meme chosee avec la session
+    public static final String ATT_MESSAGE     = "message"; // pour afficher le message dans la vue ( JSTL )
+    public static final String ATT_ERREUR      = "erreur"; // pareil version erreur
     
     public static final String VUE             = "/connecteok.jsp";
    
@@ -63,7 +66,6 @@ public class Connexion extends HttpServlet {
 		{
 			// on récupère un client en fonction de l'e-mail
 			c = (new ProxyHome<Client>(new ClientHome())).findByEmail(email);
-			System.out.println();
 			if(c == null)
 				throw new NullPointerException("Identifiants inconnus " + email + " " );
 			
@@ -74,9 +76,11 @@ public class Connexion extends HttpServlet {
 			if ( mdp.contentEquals(mdpcli)   )
 			{
 				message = "Vous êtes maintenant connecté ";
-
+				// on recupere la session depuis la requete
+				HttpSession session = request.getSession();
 		        erreur = false;
-		        
+		        //on ajoute l'entité client à la session
+		        session.setAttribute( ATT_SESSION_CLIENT, c );
 				
 			}
 			else
@@ -87,6 +91,8 @@ public class Connexion extends HttpServlet {
 			}
 
 		}
+		//association des champs du formulaire avec la variable associée traitée ici 
+		request.setAttribute( ATT_CLIENT, c );
         request.setAttribute( ATT_MESSAGE, message );
         request.setAttribute( ATT_ERREUR, erreur );
         this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
