@@ -33,7 +33,10 @@ public class CreationClient extends HttpServlet {
     public static final String ATT_ERREUR      = "erreur";
  
     public static final String VUE             = "/afficherClient.jsp";
-    
+   // ^[a-z|A-Z|0-9]+@[a-z|A-Z|0-9]+\.com|org|fr|net$  -> expreession réguiliere a traiter (mail)
+  //^(0|0033|\+33)[0-9]{9}$
+   //^[a-z|A-Z|0-9]+@[a-z|A-Z|0-9]+\.[a-z]+$
+    // vue -> jquery
     /**
      * @brief convertion date sous forme de strind en format date
      * @param haha:date sous forme string (jj/mm/aaaa)

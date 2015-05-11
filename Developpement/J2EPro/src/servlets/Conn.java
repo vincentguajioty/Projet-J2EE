@@ -52,8 +52,8 @@ public class Conn extends HttpServlet {
         
         String mdpcli;
         String mailcli;
-        String message;
-        boolean erreur;
+        String message = "";
+        boolean erreur = false;
         
         Client c = null;
         // il test si les champss son vide
@@ -66,28 +66,29 @@ public class Conn extends HttpServlet {
 		{
 			// on récupère un client en fonction de l'e-mail
 			c = (new ProxyHome<Client>(new ClientHome())).findByEmail(email);
-			if(c == null)
-				throw new NullPointerException("Identifiants inconnus " + email + " " );
-			
-			mailcli = c.getMailCli();
-			mdpcli = c.getMdpCli();
-		
-
-			if ( mdp.contentEquals(mdpcli)   )
-			{
-				message = "Vous êtes maintenant connecté ";
-				// on recupere la session depuis la requete
-				HttpSession session = request.getSession();
-		        erreur = false;
-		        //on ajoute l'entité client à la session
-		        session.setAttribute( ATT_SESSION_CLIENT, c );
-				
+			if(c == null){
+				  message = "Il n'y a aucun client enregistré pour cette adresse";
+				  erreur = true;
 			}
-			else
-			{
-				//System.out.println(mdp + " t" + mdpcli);
-			  message = "Mauvais mot de passe <br> <a href=\"connexion\">Cliquez ici</a> pour accéder au formulaire de connexion";
-			  erreur = true;
+			else {
+				mailcli = c.getMailCli();
+				mdpcli = c.getMdpCli();
+			
+
+				if ( mdp.contentEquals(mdpcli)   )
+				{
+					message = "Vous êtes maintenant connecté ";
+					// on recupere la session depuis la requete
+					HttpSession session = request.getSession();
+			        erreur = false;
+			        //on ajoute l'entité client à la session
+			        session.setAttribute( ATT_SESSION_CLIENT, c );
+					
+				}
+				else{
+					message = "Mauvais mot de passe";
+					erreur = true;
+				}
 			}
 
 		}

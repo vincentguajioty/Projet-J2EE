@@ -59,7 +59,9 @@
 								<c:if test="${!empty sessionScope.sessionClient}">
 									<li><a href="Mon-compte"><i class="fa fa-user"></i> Mon compte</a></li>
 								</c:if>
-								<li><a href="creerClient"><i class="fa fa-crosshairs"></i>S'inscrire</a></li>
+								<c:if test="${empty sessionScope.sessionClient}">
+									<li><a href="creerClient"><i class="fa fa-crosshairs"></i>S'inscrire</a></li>
+								</c:if>
 								<li><a href="panier"><i class="fa fa-shopping-cart"></i>Panier</a></li>
 								<c:import url="/inc/inc_connecte.jsp" />
 							</ul>
