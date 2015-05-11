@@ -45,7 +45,7 @@ public class Recupmdp extends HttpServlet{
 	        }
 	        else
 	        {
-	        	c = (new ProxyHome<Client>(new ClientHome())).findByEmail(email);
+	        	c = (new ClientHome()).findByEmail(email);
 	        	if(c == null){
 	        		 erreur = true;
 	        		 message2="Il n'y a aucun client enregistré pour cette adresse";

@@ -20,12 +20,12 @@ public abstract class AHome<T> implements IHome<T>
     }
 
     
-    protected final void startTx() {
+    public final void startTx() {
     	tx = entityManager.getTransaction();
 		tx.begin();
     }
 
-    protected final void commitTx() {
+    public final void commitTx() {
         tx.commit();
     }
 
@@ -36,9 +36,10 @@ public abstract class AHome<T> implements IHome<T>
     public abstract T merge(T me);
 
     public abstract T findById(int me);
-
-	//what
-	public abstract T findByEmail(String email);
-	//what
+    
+    public EntityManager getEm()
+	{
+		return entityManager;
+	}
 	
 }

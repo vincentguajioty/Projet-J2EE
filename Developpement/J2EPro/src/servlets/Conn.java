@@ -65,7 +65,7 @@ public class Conn extends HttpServlet {
 		else
 		{
 			// on récupère un client en fonction de l'e-mail
-			c = (new ProxyHome<Client>(new ClientHome())).findByEmail(email);
+			c = (new ClientHome()).findByEmail(email); // pas de proxy car findByEmail est specifique a ClientHome
 			if(c == null)
 				throw new NullPointerException("Identifiants inconnus " + email + " " );
 			

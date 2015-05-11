@@ -2,7 +2,6 @@ package entities.homes;
 
 import java.util.*;
 
-import entities.AbstractEntity;
 import entities.Plat;
 import entities.PlatId;
 

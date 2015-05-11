@@ -72,11 +72,12 @@ public class ClientHome extends AHome<Client>{
 		log.debug("getting Client instance with mail: " + email);
 		Client instance = null;
 		try {
+			startTx();
 			instance = (Client) entityManager.createQuery(
 				    "select c from Client as c where c.mailCli = ?1")
 				    .setParameter(1, email)
 				    .getSingleResult();
-			
+			commitTx();
 			log.debug("get successful");
 			return instance;
 		} 

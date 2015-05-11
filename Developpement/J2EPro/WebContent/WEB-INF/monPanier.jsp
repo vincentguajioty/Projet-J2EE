@@ -43,7 +43,13 @@
 				width: 80%;
 				display: inline-block;
 			}
+			
+			.action_wrapper>.retirer
+			{
+				cursor: pointer;
+			}
 		</style>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	</head>
 	<body>
 		<h1>Mon panier</h1>
@@ -62,9 +68,9 @@
 			        	{
 			        		String url = application.getContextPath();
 							out.println("<li><div class=\"item_wrapper\"><p>" + men.toString() +
-							" </p><a href=\"" + url + "/panier\">Détails</a>" +
-							"<a href=\"" + url + "/panier\">Retirer</a>   " +
-							"</div></li>");
+									" </p><div class=\"action_wrapper\"><a class=\"details\" href=\"" + url + "/panier\">Détails</a>" + 
+									"<a id=\"" + String.valueOf(men.getId().getIdProduit()) + "\" class=\"retirer\" >Retirer</a>" + 
+									"</div></li>");
 			        	}
 		        	%>
 	        	</ul>
@@ -82,22 +88,12 @@
 			        	{
 			        		String url = application.getContextPath();
 							out.println("<li><div class=\"item_wrapper\"><p>" + men.toString() + 
-									" </p><a href=\"" + url + "/panier\">Détails</a>" + 
-									"<a href=\"" + url + "/panier\">Retirer</a>   " + 
+									" </p><div class=\"action_wrapper\"><a class=\"details\" href=\"" + url + "/panier\">Détails</a>" + 
+									"<a id=\"" + String.valueOf(men.getId().getIdProduit()) + "\" class=\"retirer\" >Retirer</a>" + 
 									"</div></li>");
 						}
+		        	//href=\"" + url + "/panier?rem=" + String.valueOf(men.getId().getIdProduit()) + "\"
 		        	%>
-		        	
-		        	<!--
-		        	<li><div class="item_wrapper">
-		        		<p> lolllokio <p>
-		        		<button id="bdetails" type="button">Details</button> <button id="bretirer" type="button">Retirer</button>
-		        	</div> </li>
-		        	<li><div class="item_wrapper">
-		        		<p> vdbdwbfsn <p>
-		        		<button id="bdetails" type="button">Details</button> <button id="bretirer" type="button">Retirer</button>
-		        	</div></li>
-		        	 -->
 	        	</ul>
         	</div>
         </div>
@@ -111,5 +107,25 @@
         		out.println("Message: " + attribut);
             %>
         </div>
+        <script type="text/javascript">
+        $( document ).ready(function()
+      	{
+            $(".action_wrapper>.retirer").click(function()
+            {
+            	alert("retirer");
+            	<%
+	            	out.println("var url = \"" + application.getContextPath() + "/panier?rem=\" + $(this).attr(\"id\");"); 
+            		//out.println("window.location.href = \"" + application.getContextPath() + "\" + $(this).attr(\"id\");") ;
+           		%>
+           		window.location.href = url;
+           		//console.log(url);
+            });
+            
+            $(".action_wrapper>.details").click(function()
+            {
+            	alert("details");
+            });
+        });
+        </script>
 	</body>
 </html>
