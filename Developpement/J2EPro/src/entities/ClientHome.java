@@ -4,6 +4,7 @@ package entities;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 
 import org.apache.commons.logging.Log;
@@ -66,6 +67,33 @@ public class ClientHome extends AHome<Client>{
 			throw re;
 		}
 	}
+	//what
+	public Client findByEmail(String email) {
+		log.debug("getting Client instance with mail: " + email);
+		Client instance = null;
+		try {
+			instance = (Client) entityManager.createQuery(
+				    "select c from Client as c where c.mailCli = ?1")
+				    .setParameter(1, email)
+				    .getSingleResult();
+			
+			log.debug("get successful");
+			return instance;
+		} 
+		catch (Exception re) {
+			if (re.getClass()==RuntimeException.class)
+			{
+				log.error("get failed", re);
+			}
+			else if (re.getClass()==NoResultException.class)
+			{
+				log.error("no result", re);
+			}
+			return null;
+		}
+		
+	}
+	//what
 	public ClientHome()
 	{
 		System.out.println("création d'un clienthome");

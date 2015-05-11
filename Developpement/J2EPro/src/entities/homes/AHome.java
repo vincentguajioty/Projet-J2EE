@@ -36,4 +36,9 @@ public abstract class AHome<T> implements IHome<T>
     public abstract T merge(T me);
 
     public abstract T findById(int me);
+
+	//what
+	public abstract T findByEmail(String email);
+	//what
+	
 }

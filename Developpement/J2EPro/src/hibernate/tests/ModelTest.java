@@ -14,7 +14,9 @@ import java.util.Set;
 
 
 
+
 import entities.Client;
+import entities.ClientHome;
 import entities.Menu;
 import entities.MenuHome;
 import entities.MenuId;
@@ -119,5 +121,20 @@ public class ModelTest
 		}
 		
 		System.out.println("\n}");
+	}
+	
+	@Test
+	public void testGetClientByEmail()
+	{
+		Client c = (new ProxyHome<Client>(new ClientHome())).findByEmail("henri@davanture.fr");
+		//Logger. debug("Returning default value for: ");
+		
+		if(c == null)
+			throw new NullPointerException("aucun client");
+		else{
+			System.out.println("testGetPlat : {\n\t" + c.toString() + "\n\t" + c.toString() + "\n}");
+		}
+		
+
 	}
 }

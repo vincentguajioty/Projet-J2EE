@@ -46,7 +46,17 @@ public class ProxyHome<T> implements IHome<T>
     	
     	return o;
     }
-    
+	//what
+    public T findByEmail(String email)
+    {
+    	T o;
+    	delegate.startTx();
+    	o = delegate.findByEmail(email);
+    	delegate.commitTx();
+    	
+    	return o;
+    }
+	//what
     public AHome<T> getHome()
     {
     	return delegate;
