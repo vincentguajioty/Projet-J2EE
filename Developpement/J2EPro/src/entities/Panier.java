@@ -30,6 +30,7 @@ public class Panier implements java.io.Serializable {
 	private Set<Produit> produitsToRem = new HashSet<Produit>();
 
 	public Panier() {
+		idPanier = -1;
 	}
 
 	public Panier(Client client, Set<Client> clients, Set<Produit> produits) {

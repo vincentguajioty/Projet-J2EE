@@ -23,6 +23,17 @@ public class PanierHome extends AHome<Panier>
 {
 	private static final Log log = LogFactory.getLog(PanierHome.class);
 
+	public int getLastId()
+	{
+		int res = -1;
+		Query query =  entityManager.createNativeQuery("select id_panier from Panier order by id_panier desc limit 1");
+		EntityTransaction tx = entityManager.getTransaction();
+		tx.begin();
+		res = (int)query.getSingleResult();
+		tx.commit();
+		return res + 1;
+	}
+	
 	public void persist(Panier transientInstance) {
 		System.out.println("persisting Panier instance");
 		try {
