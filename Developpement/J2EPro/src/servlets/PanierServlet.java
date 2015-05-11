@@ -96,7 +96,7 @@ public class PanierServlet extends HttpServlet
 		
 				
 				//Set<Menu> m = p.get
-			this.getServletContext().getRequestDispatcher( "/WEB-INF/monPanier.jsp" ).forward( request, response );
+			this.getServletContext().getRequestDispatcher( "/monPanier.jsp" ).forward( request, response );
 		}
 	}
 	
