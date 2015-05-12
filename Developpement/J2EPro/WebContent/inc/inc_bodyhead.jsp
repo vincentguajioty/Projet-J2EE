@@ -91,11 +91,11 @@
 								<li class="dropdown"><a href="#">Menu<i
 										class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
-										<li><a href="shop.html">Produits</a></li>
-										<li><a href="product-details.html">Détails des articles</a></li>
+										<li><a href="#">Produits</a></li>
+										<li><a href="#l">Détails des articles</a></li>
 										<li><a href="monPanier.jsp">Panier</a></li>
 									</ul></li>
-								<li><a href="mentions.jsp">Mentions Légales</a></li>
+								<li><a href="/J2EPro/mention">Mentions Légales</a></li>
 							</ul>
 						</div>
 					</div>

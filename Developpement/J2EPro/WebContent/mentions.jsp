@@ -7,13 +7,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Login | La pâte de canard</title>
+<title>Mentions légales | La pâte de canard</title>
 <c:import url="/inc/inc_bodyhead.jsp" />
 	<section id="form">
 		<!--form-->
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4 col-sm-offset-1">
+				<div class="col-sm-8 col-sm-offset-1">
         <div id="corps">
             1. INFORMATIONS LÉGALES</br>
 Les informations suivantes définissent les termes et conditions d’utilisation de ce site Internet. Veuillez les lire avec attention avant de parcourir le site :</br>
