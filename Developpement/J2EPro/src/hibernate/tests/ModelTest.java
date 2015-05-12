@@ -1,5 +1,6 @@
 package hibernate.tests;
 
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -8,6 +9,9 @@ import java.util.Set;
 
 
 //import static org.junit.Assert.*;
+
+
+
 
 
 
@@ -33,6 +37,15 @@ import org.junit.Test;
 
 public class ModelTest
 {
+	@Test
+	public void testFindAll() throws Exception
+	{
+		HashSet<Plat> p = (new ProxyHome<Plat>(new PlatHome())).findAll();
+		if(p.size() <= 0)
+			throw new Exception("plat vide ou null");
+	}
+	
+	
 	@Test
 	public void testGetMenu()
 	{

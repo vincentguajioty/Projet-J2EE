@@ -2,9 +2,13 @@ package entities;
 
 // Generated Apr 26, 2015 9:45:15 PM by Hibernate Tools 4.0.0
 
+import java.util.HashSet;
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -61,6 +65,20 @@ public class PlatHome extends AHome<Plat>
 			Plat instance = entityManager.find(Plat.class, id);
 			log.debug("get successful");
 			return instance;
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
+		}
+	}
+	public HashSet<Plat> findAll() {
+		List<Plat> instances = null;
+		try {
+			TypedQuery<Plat> qu = entityManager.createQuery(
+					"select p from Plat as p", Plat.class);
+			instances = qu.getResultList();
+			
+			log.debug("get successful");
+			return new HashSet<Plat>(instances);
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
 			throw re;

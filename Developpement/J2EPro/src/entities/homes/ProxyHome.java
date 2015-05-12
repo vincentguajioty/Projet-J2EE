@@ -56,6 +56,15 @@ public class ProxyHome<T> implements IHome<T>
     	
     	return o;
     }
+    public HashSet<T> findAll()
+    {
+    	HashSet<T> o;
+    	delegate.startTx();
+    	o = delegate.findAll();
+    	delegate.commitTx();
+    	 
+    	return o;
+    }
 	//what
     public AHome<T> getHome()
     {

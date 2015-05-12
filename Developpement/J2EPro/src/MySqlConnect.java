@@ -18,7 +18,7 @@ public abstract class MySqlConnect
 {
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://www.guajioty.fr:3306/j2ee"; 
+	static final String DB_URL = "jdbc:mysql://bdd.davanture.fr:3306/j2ee"; 
 	
 	//	Database credentials
 	static final String DB_USER = "j2ee";  // username

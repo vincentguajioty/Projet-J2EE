@@ -34,6 +34,7 @@ public abstract class AHome<T> implements IHome<T>
     public abstract void remove(T me);
 
     public abstract T merge(T me);
+    public abstract HashSet<T> findAll();
 
     public abstract T findById(int me);
 
