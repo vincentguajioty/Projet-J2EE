@@ -75,12 +75,12 @@ public class Recupmdp extends HttpServlet{
 		    					message.setRecipients(Message.RecipientType.TO,
 		    						InternetAddress.parse(email));
 		    					message.setSubject("Noreply Password recovery");
-		    					message.setText("Here's your password : " + " <b> " + mdp +"</b>");
+		    					message.setText("Here's your password : " + mdp);
 		    		 
 		    					Transport.send(message);
 		    		 
 		    					System.out.println("Done");
-		    					message2 = "Mail envoyé avec succès, veuillez attendre son envoi.";
+		    					message2 = "Mail envoyé avec succès, veuillez attendre sa réception (2-3 minutes).";
 		    				} catch (MessagingException e) {
 		    					throw new RuntimeException(e);
 		    				}

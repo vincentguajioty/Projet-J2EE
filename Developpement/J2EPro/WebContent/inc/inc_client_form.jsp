@@ -28,5 +28,5 @@
 <br />
 
 <label for="datenaiss">Votre date de naissance</label>
-<input type="text" id="datenaiss" name="datenaissClient" value="" size="30" maxlength="60" />
+<input type="text" id="datenaiss" name="datenaissClient" value="jj/mm/aaa" size="30" maxlength="60" />
 <br />
