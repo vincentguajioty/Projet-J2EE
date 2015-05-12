@@ -14,6 +14,6 @@ public interface IHome<T>
     public T merge(T me);
 
     public T findById(int me);
-    // ca fait palanter le serveur demande aide Julien
-    //public T findByemail(int me);
+
+    public HashSet<T> findAll();
 }

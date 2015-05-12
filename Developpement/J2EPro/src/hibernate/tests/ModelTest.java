@@ -1,5 +1,6 @@
 package hibernate.tests;
 
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -18,10 +19,10 @@ import java.util.Set;
 
 
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-
 import entities.Client;
 import entities.ClientHome;
 import entities.Menu;
@@ -40,6 +41,15 @@ import org.junit.Test;
 
 public class ModelTest
 {
+	@Test
+	public void testFindAll() throws Exception
+	{
+		HashSet<Plat> p = (new ProxyHome<Plat>(new PlatHome())).findAll();
+		if(p.size() <= 0)
+			throw new Exception("plat vide ou null");
+	}
+	
+	
 	@Test
 	public void testGetMenu()
 	{

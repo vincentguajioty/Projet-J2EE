@@ -46,7 +46,6 @@ public class ProxyHome<T> implements IHome<T>
     	
     	return o;
     }
-
     public AHome<T> getHome()
     {
     	return delegate;
