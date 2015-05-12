@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Moncompte extends HttpServlet{
 	 public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException
 		{
-			this.getServletContext().getRequestDispatcher( "/moncompte.jsp" ).forward( request, response );
+			this.getServletContext().getRequestDispatcher( "/moncompte" ).forward( request, response );
 		}
 
 }

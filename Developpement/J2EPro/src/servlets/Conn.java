@@ -65,7 +65,7 @@ public class Conn extends HttpServlet {
 		else
 		{
 			// on récupère un client en fonction de l'e-mail
-			c = (new ProxyHome<Client>(new ClientHome())).findByEmail(email);
+			c = (new ClientHome()).findByEmail(email);
 			if(c == null){
 				  message = "Il n'y a aucun client enregistré pour cette adresse";
 				  erreur = true;
