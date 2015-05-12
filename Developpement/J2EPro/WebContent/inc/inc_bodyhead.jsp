@@ -95,7 +95,7 @@
 										<li><a href="product-details.html">Détails des articles</a></li>
 										<li><a href="monPanier.jsp">Panier</a></li>
 									</ul></li>
-								<li><a href="mentions.html">Mentions Légales</a></li>
+								<li><a href="mentions.jsp">Mentions Légales</a></li>
 							</ul>
 						</div>
 					</div>
