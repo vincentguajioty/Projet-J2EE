@@ -6,8 +6,8 @@
  
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
   <property name="hibernate.connection.password">projetEPSIj2ee</property>
-  <property name="hibernate.connection.url">jdbc:mysql://guajioty.fr/j2ee</property>
-  <property name="hibernate.connection.username">Julien</property>
+  <property name="hibernate.connection.url">jdbc:mysql://bdd.davanture.fr:3306/j2ee</property>
+  <property name="hibernate.connection.username">j2ee</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 <!--
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
