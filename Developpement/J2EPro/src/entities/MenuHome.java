@@ -15,7 +15,7 @@ import entities.homes.AHome;
  * Home object for domain model class Menu.
  * @see entities.Menu
  * @author Hibernate Tools
- */
+ */ 
 @Stateless
 public class MenuHome extends AHome<Menu>
 {

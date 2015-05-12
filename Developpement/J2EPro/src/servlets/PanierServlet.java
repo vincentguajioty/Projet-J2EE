@@ -158,7 +158,16 @@ public class PanierServlet extends HttpServlet
 
 		// on check si panier dans cookie
 		// Récupération d’un cookie
-		String cookieValue = getCookieValue(request).getValue();
+		String cookieValue = "";
+		try
+		{
+			cookieValue = getCookieValue(request).getValue();
+		}
+		catch(NullPointerException npe)
+		{
+			cookieValue = "";
+		}
+		
 		
 		
 		if(!cookieValue.equals(""))
@@ -193,7 +202,7 @@ public class PanierServlet extends HttpServlet
 		if(p.getIdPanier() == -1)
 		{
 			p.setIdPanier( ((PanierHome)php.getHome()).getLastId() );
-			php.persist(p);
+			//php.persist(p);
 		}
 		
 		mergedP = php.merge(p);
